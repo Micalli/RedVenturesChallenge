@@ -2,15 +2,15 @@ generator client {
     provider = "prisma-client-js"
 }
 
-datasource db {
-    provider = "postgresql"
-    url      = "postgresql://root:root@localhost:5432/redventures?schema=public"
-}
 // datasource db {
-//     provider  = "postgresql"
-//     url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
-//     directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+//     provider = "postgresql"
+//     url      = "postgresql://root:root@localhost:5432/redventures?schema=public"
 // }
+datasource db {
+    provider  = "postgresql"
+    url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+    directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
 
 model Broth {
     id            Int    @id @default(autoincrement())
