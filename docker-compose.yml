@@ -4,8 +4,8 @@ services:
     image: postgres:14.1-alpine
     restart: always
     environment:
-      - POSTGRES_USER=default
-      - POSTGRES_PASSWORD=FIKRW0iC3LbH
-      - POSTGRES_DB=verceldb
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=redventures
     ports:
-      - 'ep-sparkling-thunder-a4a84man-pooler.us-east-1.aws.neon.tech:5432'
+      - '5432:5432'
