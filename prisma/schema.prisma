@@ -1,0 +1,46 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Broth {
+    id            Int    @id @default(autoincrement())
+    name          String
+    imageInactive String
+    imageActive   String
+    description   String
+    price         Float
+
+    @@map("broths")
+}
+
+model Protein {
+    id            Int    @id @default(autoincrement())
+    name          String
+    imageInactive String
+    imageActive   String
+    description   String
+    price         Float
+
+    @@map("proteins")
+}
+
+model Order {
+    id        String @id @default(uuid()) @db.Uuid
+    brothId   String
+    proteinId String
+
+    @@map("orders")
+}
+
+model Recipes {
+    id    Int    @id @default(autoincrement())
+    name  String
+    image String
+
+    @@map("recipe")
+}
