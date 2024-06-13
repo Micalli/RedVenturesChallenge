@@ -1,12 +1,12 @@
 {
   "name": "challenge-red-ventures",
   "version": "0.0.1",
-  "description": "Red Ventures Challenge API",
+  "description": "Red Ventures Challenge",
   "author": "Micalli",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build",
+    "build": "prisma generate && nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
